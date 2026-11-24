@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090d19" />
+  <title>CHRONOGENESIS — Procedural Impossible Architecture</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="brandmark">◈</div><div><strong>CHRONOGENESIS</strong><span>PROCEDURAL ART LAB / CINEMATIC ARCHITECTURE / VERSION 04</span></div></div>
+      <div class="topright"><button id="cinemaMode" class="cinema-toggle">⛶ CINEMATIC VIEW</button><span class="status-dot"></span> LIVE 3D ENGINE <span class="divider">/</span> CATEGORY 03</div>
+    </header>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="eyebrow">THE ARCHITECT'S CONSOLE</div>
+        <h1>Impossible<br /><em>worlds.</em></h1>
+        <p class="description">Generate cinematic impossible architecture with a hierarchical shape grammar. Evolve structures, bend gravity and branch through time.</p>
+        <div class="section-title">01 / GENERATION</div>
+        <label class="field-label" for="seed">WORLD SEED</label>
+        <div class="seedrow"><input id="seed" type="number" min="1" max="4294967295" value="483921" /><button id="randomSeed" title="Random seed" aria-label="Random seed">↻</button></div>
+        <button class="primary" id="generate">✧ &nbsp;GENERATE NEW WORLD</button>
+        <button class="secondary" id="evolve">◇ &nbsp;EVOLVE + MORPH 12 VARIATIONS</button>
+        <div class="form-card"><span>CURRENT ARCHITECTURAL FORM</span><strong id="formName">Floating Citadel</strong><small id="morphStatus">READY TO EVOLVE</small></div>
+        <div class="section-title">02 / GRAVITY FIELD</div>
+        <p class="field-help">Reshape floating structures with directional forces.</p>
+        <div class="gravity-grid">
+          <button data-gravity="0">↓ <span>DOWN</span></button>
+          <button data-gravity="1">↑ <span>UP</span></button>
+          <button data-gravity="2">← <span>WEST</span></button>
+          <button data-gravity="3">→ <span>EAST</span></button>
+          <button data-gravity="4">↙ <span>NORTH</span></button>
+          <button data-gravity="5">↗ <span>SOUTH</span></button>
+        </div>
+        <div class="section-title">03 / TEMPORAL LAB</div>
+        <div class="twobuttons"><button class="secondary" id="rewind">⟲ &nbsp;REWIND STATE</button><button class="secondary" id="resetView">◎ &nbsp;RESET VIEW</button></div>
+        <div class="timeline"><span>DESIGN HISTORY</span><strong id="steps">0 SAVED</strong></div>
+        <div id="historyLabels" class="history-labels">Present: initial generation</div>
+        <div class="section-title">04 / EXPORT</div>
+        <div class="twobuttons"><button class="secondary" id="exportImage">↓ PNG ART</button><button class="secondary" id="exportJson">↓ JSON DATA</button></div>
+        <p class="footer-note">TAGE v3 generates four mathematical architectural families and animates reconstruction between distinct forms. Gravity is an artistic deformation field, not a rigid-body physics solver. Rewind restores saved designs.</p>
+      </aside>
+      <main class="viewport" id="viewport">
+        <div class="viewport-top"><div class="scene-label"><span class="scene-pip"></span> LIVE // EVOLVING ARCHITECTURAL ART</div><div class="scene-meta" id="sceneMeta">SEED 483921 · GEN 0</div></div>
+        <div class="viewport-bottom"><div class="hint">DRAG TO ORBIT &nbsp; · &nbsp; F CINEMA &nbsp; · &nbsp; SCROLL TO ZOOM &nbsp; · &nbsp; G GRAVITY &nbsp; · &nbsp; R REWIND &nbsp; · &nbsp; E EVOLVE</div><div class="axis">X / Y / Z <span>●</span></div></div>
+        <div id="toast" class="toast" role="status"></div>
+        <div id="loading" class="loading">INITIALIZING GENERATIVE WORLD…</div>
+      </main>
+      <aside class="inspector">
+        <div class="eyebrow">LIVE ANALYSIS</div>
+        <div class="metric-big"><span>DESIGN SCORE*</span><strong id="score">—</strong><small>/ 100</small></div>
+        <div class="inspector-divider"></div>
+        <div class="stat"><span>PLATFORMS</span><strong id="platforms">—</strong></div>
+        <div class="stat"><span>TOWER GENES</span><strong id="towers">—</strong></div>
+        <div class="stat"><span>CONNECTING BRIDGES</span><strong id="bridges">—</strong></div>
+        <div class="stat"><span>EVOLUTIONARY GENERATION</span><strong id="generation">0</strong></div>
+        <div class="stat"><span>TIMELINE BRANCH</span><strong id="branch">A</strong></div>
+        <div class="inspector-divider"></div>
+        <div class="eyebrow">EVALUATION CRITERIA</div>
+        <div class="meter-name"><span>SPATIAL BALANCE</span><span id="balanceNum">0%</span></div><div class="bar"><div id="balanceBar"></div></div>
+        <div class="meter-name"><span>HEIGHT VARIATION</span><span id="variationNum">0%</span></div><div class="bar"><div id="variationBar"></div></div>
+        <div class="meter-name"><span>ARCHITECTURAL DETAIL</span><span id="detailNum">0%</span></div><div class="bar"><div id="detailBar"></div></div>
+        <div class="connectivity" id="connectivity">● GRAPH INTEGRITY: VERIFIED</div>
+        <div class="fingerprint">GENOME FINGERPRINT<br /><strong id="fingerprint">—</strong></div>
+        <p class="footer-note">*A transparent heuristic score for balance, variation, detail and connectivity. It does not measure objective artistic beauty.</p>
+      </aside>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
